@@ -96,3 +96,29 @@ You can close the console now.
         "review_date": "12/31/2017"}' 
         EOF
     ```
+
+
+### Docker
+
+```
+docker run -p 8080:8080 jdk-test bash -c "./gradlew build && java -jar build/libs/micro-socialreview-0.1.0.jar"
+```
+
+
+
+#### Testing
+```
+docker exec -it <container> /bin/bash
+```
+and then run inside container:
+
+```
+./gradlew test
+```
+
+###### OR
+
+```
+docker run -p 8080:8080 --mount type=bind,source="$(pwd)",target=/app jdk-test bash -c "./gradlew test"
+
+```
