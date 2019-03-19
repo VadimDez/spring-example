@@ -13,6 +13,7 @@ server:
 # Cloudant Configuration
 cloudant:
     db: socialreviewdb
-    username: xxxx
-    password: zzzzz
-    url: https://xxxx-yyyy-bluemix.cloudant.com
+    username: 0ac37124-debd-4ac1-a26c-4dde374861c9-bluemix
+    password: 1e5e76da6b9829ef63552d197096dc4120072f10ce8b5cb54535246a6afd75f3
+    url: https://0ac37124-debd-4ac1-a26c-4dde374861c9-bluemix:1e5e76da6b9829ef63552d197096dc4120072f10ce8b5cb54535246a6afd75f3@0ac37124-debd-4ac1-a26c-4dde374861c9-bluemix.cloudantnosqldb.appdomain.cloud
+

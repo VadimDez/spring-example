@@ -9,7 +9,8 @@ curl -L https://services.gradle.org/distributions/gradle-2.3-bin.zip -o gradle-2
 mkdir /opt; \
 mkdir /opt/gradle; \
 unzip -d /opt/gradle gradle-2.3-bin.zip; \
-export PATH=$PATH:/opt/gradle/gradle-2.3/bin;gradle wrapper;
+export PATH=$PATH:/opt/gradle/gradle-2.3/bin; \
+gradle wrapper;
 
 COPY . /app
 

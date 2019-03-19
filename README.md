@@ -100,6 +100,12 @@ You can close the console now.
 
 ### Docker
 
+build
+```
+docker build --tag=jdk-test .
+```
+
+
 ```
 docker run -p 8080:8080 jdk-test bash -c "./gradlew build && java -jar build/libs/micro-socialreview-0.1.0.jar"
 ```
