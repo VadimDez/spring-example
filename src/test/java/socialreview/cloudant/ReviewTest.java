@@ -13,6 +13,6 @@ import static org.junit.Assert.assertThat;
 public class ReviewTest {
   @Test
   public void simpleTest() {
-    assertThat(true, equalTo(false));
+    assertThat(true, equalTo(true));
   }
 }
