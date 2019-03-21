@@ -16,4 +16,6 @@ COPY . /app
 
 RUN ./gradlew build;
 
+ENTRYPOINT ["java", "-jar", "build/libs/micro-socialreview-0.1.0.jar"]
+
 EXPOSE 8080
