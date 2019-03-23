@@ -128,3 +128,27 @@ and then run inside container:
 docker run -p 8080:8080 --mount type=bind,source="$(pwd)",target=/app jdk-test bash -c "./gradlew test"
 
 ```
+
+
+### Pipeline
+
+##### BUILD step
+
+###### Custom docker image:
+```
+mcr.microsoft.com/java/jdk:8u192-zulu-alpine
+```
+
+###### Build script
+```
+apk update
+apk add bash
+apk add curl
+curl -L https://services.gradle.org/distributions/gradle-2.3-bin.zip -o gradle-2.3-bin.zip
+mkdir /opt
+mkdir /opt/gradle
+unzip -d /opt/gradle gradle-2.3-bin.zip
+export PATH=$PATH:/opt/gradle/gradle-2.3/bin
+gradle wrapper
+./gradlew build
+```
