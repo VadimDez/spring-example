@@ -132,14 +132,14 @@ docker run -p 8080:8080 --mount type=bind,source="$(pwd)",target=/app jdk-test b
 
 ### Pipeline
 
-##### BUILD step
+#### BUILD step
 
 ###### Custom docker image:
 ```
 mcr.microsoft.com/java/jdk:8u192-zulu-alpine
 ```
 
-###### Build script
+##### Build script
 ```
 apk update
 apk add bash
@@ -151,4 +151,17 @@ unzip -d /opt/gradle gradle-2.3-bin.zip
 export PATH=$PATH:/opt/gradle/gradle-2.3/bin
 gradle wrapper
 ./gradlew build
+```
+#### DEPLOY step
+
+##### Deploy script
+```
+#!/bin/bash
+# Push app
+cf push $CF_APP -p build/libs/micro-socialreview-0.1.0.jar
+# Export app name and URL for use in later Pipeline jobs
+export CF_APP_NAME="$CF_APP"
+export APP_URL=http://$(cf app $CF_APP_NAME | grep -e urls: -e routes: | awk '{print $2}')
+# View logs
+#cf logs "${CF_APP}" --recent
 ```
