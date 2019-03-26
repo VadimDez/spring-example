@@ -126,7 +126,6 @@ and then run inside container:
 
 ```
 docker run -p 8080:8080 --mount type=bind,source="$(pwd)",target=/app jdk-test bash -c "./gradlew test"
-
 ```
 
 
